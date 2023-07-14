@@ -1,10 +1,7 @@
-import { Button } from './button';
-
-import { SearchIcon } from './searchIcon';
-
-import './Head.css'
-
 import { useState } from 'react';
+import { Button } from './button';
+import { SearchIcon } from './searchIcon';
+import './Head.css'
 
 const Head = ({onSubmit}) => {
   const  [input, setInput] = useState('');
@@ -16,8 +13,8 @@ const Head = ({onSubmit}) => {
       event.preventDefault();
       onSubmit(input);
       setResult(input);
-      }
     }
+  }
 
   const handleChange = (event) => {
     event.preventDefault();
@@ -33,9 +30,7 @@ const Head = ({onSubmit}) => {
   return  (
     <div className="search-container">
       <div className="snap-shot">
-        <b>
-          SnapShot
-        </b> 
+        SnapShot 
       </div>
       
       <div className="input">
@@ -44,11 +39,12 @@ const Head = ({onSubmit}) => {
             <input placeholder="Search..." value={input} onChange={handleChange} className="search" />
           </form>
         </div>
-      <div>
-        <button onClick={handleFormSubmit} className='icon-container'>
-          <SearchIcon />
-        </button>
-      </div>
+
+        <div>
+          <button onClick={handleFormSubmit} className='icon-container'>
+            <SearchIcon />
+          </button>
+        </div>
       </div>
 
       <div className="button-container">
@@ -59,11 +55,11 @@ const Head = ({onSubmit}) => {
       </div>
   
       <div className="pics-alt">
-      {result} Pictures
+        {result} Pictures
       </div>
       
     </div>
-    )
-  }
+  )
+}
 
 export default Head;

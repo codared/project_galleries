@@ -7,7 +7,6 @@ const flickr = new Flickr(FLICKR_API_KEY);
 
 const getList = async (query) => {
   const { body } = await flickr.photos.search({text: query});
-  console.log('axios', body);
   return body;
 };
 
