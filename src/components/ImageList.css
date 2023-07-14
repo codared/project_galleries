@@ -1,0 +1,17 @@
+ .image-list {
+  width: 60%;
+  height: 80%;
+  columns: 4;
+  margin-top: 35px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+img{
+  width: 100%;
+  height: 150px;
+  margin-bottom: 4px;
+
+} 

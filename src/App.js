@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import {useState} from 'react';
+import Head from './components/Head';
+import ImageList from './components/ImageList';
+import {getList} from './api';
 
-function App() {
+
+function App(){
+ const [images, setImages] = useState([]);
+
+  const handleSubmit = async (term) => {
+      const result = await getList(term);
+      console.log('This is the', result)
+      setImages(result.photos.photo);
+ };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <div>
+      <Head onSubmit={handleSubmit} />
+      <ImageList images={images} />
+  </div>
+  )
+};
 
-export default App;
+export default App
